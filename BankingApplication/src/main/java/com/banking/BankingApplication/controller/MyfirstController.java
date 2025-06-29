@@ -39,5 +39,19 @@ public class MyfirstController {
 		
 	}
 	
+@PostMapping("/file1")
+	public Map Readfile1(@RequestBody Text<String> text) {
+		Map<String,String> str = null;
+		try {
+			 str = service.readText(text);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return str;
+		
+	}
+	
 
 }
